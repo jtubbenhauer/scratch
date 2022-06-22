@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap");
+/*
+Theme Name: Scratch
+Theme URI: https://wordpress.org/themes/twentytwenty/
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Our default theme for 2020 is designed to take full advantage of the flexibility of the block editor. Organizations and businesses have the ability to create dynamic landing pages with endless layouts using the group and column blocks. The centered content column and fine-tuned typography also makes it perfect for traditional blogs. Complete editor styles give you a good idea of what your content will look like, even before you publish. You can give your site a personal touch by changing the background colors and the accent color in the Customizer. The colors of all elements on your site are automatically calculated based on the colors you pick, ensuring a high, accessible color contrast for your visitors.
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
+Version: 1.3
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentytwenty
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* ------------------ CSS RESET ------------------ */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: "Barlow", sans-serif;
+  font-family: "Fraunces", serif;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0 !important;
+}
+
+:root {
+  /* Neutral */
+  --soft-red: hsl(7, 99%, 70%);
+  --yellow: hsl(51, 100%, 49%);
+  /* Graphic design text */
+  --dark-cyan: hsl(167, 40%, 24%);
+  /* Photography text */
+  --dark-blue: hsl(198, 62%, 26%);
+  /* Footer */
+  --dark-moderate-cyan: hsl(168, 34%, 41%);
+
+  /* Neutral */
+  --v-dark-blue: hsl(212, 27%, 19%);
+  --v-dark-gray-blue: hsl(213, 9%, 39%);
+  --dark-gray-blue: hsl(232, 10%, 55%);
+  --gray-blue: hsl(210, 4%, 67%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/* Page container */
+
+.container {
+  width: 100vw;
+  height: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navbar */
+
+.navbar {
+  background-color: #3ebfff;
+  width: 100vw;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.desktop-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: white;
+  font: "Barlow";
+}
+
+.menu-item {
+  font-family: "Barlow";
+}
+
+.contact-btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2rem;
+}
+
+/* Refactor this */
+.responsive-image {
+  width: 100%;
+}
+
+/* Header image with arrow */
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.header-text {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.header-text img {
+  width: 20px;
+  margin-top: 3rem;
+}
+
+.header-text h1 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Responsive two column section */
+
+.two-column {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  justify-content: space-evenly;
+}
+
+/* Text column */
+
+.text-column {
+  width: 50%;
+  text-align: center;
+}
+
+.text-column * {
+  margin: 1rem;
+}
+
+.text-column h2 {
+  font-size: 2rem;
+}
+
+.text-column p {
+  font-family: "Barlow";
+}
+
+.text-column button {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  border-bottom: 2px solid green;
+  /* Fix border */
+}
+
+/* Image column */
+
+.image-column {
+  width: 50%;
+}
+
+.image-column img {
+  width: 100%;
+}
+
+/* Desktop */
+@media only screen and (min-width: 750px) {
+  .mobile {
+    display: none;
+  }
+
+  .text-column {
+    text-align: left;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 750px) {
+  .desktop {
+    display: none;
+  }
+
+  .two-column {
+    flex-direction: column-reverse;
+  }
+
+  .image-column,
+  .text-column {
+    width: 100%;
+  }
+}
